@@ -1,4 +1,8 @@
 streamlit
 pandas
+numpy
+Pillow
+pystac-client
+planetary-computer
+odc-stac
 matplotlib
-seaborn
