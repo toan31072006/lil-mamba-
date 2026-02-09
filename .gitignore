@@ -1,0 +1,11 @@
+# Bỏ qua thư mục ảo Python
+venv/
+__pycache__/
+
+# Bỏ qua toàn bộ ảnh trong thư mục data vì quá nặng
+data/images/*
+data/masks/*
+
+# Nhưng giữ lại cấu trúc thư mục (file .gitkeep)
+!data/images/.gitkeep
+!data/masks/.gitkeep
