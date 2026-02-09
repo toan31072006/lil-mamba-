@@ -5,4 +5,5 @@ Pillow
 pystac-client
 planetary-computer
 odc-stac
+matplotlib
 plotly
