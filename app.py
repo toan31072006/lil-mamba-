@@ -134,8 +134,8 @@ with col_vis:
         sat_img = download_satellite_image(current_item)
     
     # --- LOGIC XỬ LÝ MASK PNG ---
-    # Tìm file PNG trùng ngày trong folder
-    png_filename = f"{actual_date.strftime('%Y-%m-%d')}.png"
+    # SỬA LỖI TẠI ĐÂY: Thêm 'img_' vào tên file để khớp với file upload
+    png_filename = f"img_{actual_date.strftime('%Y-%m-%d')}.png" 
     png_path = os.path.join(MASK_DIR, png_filename)
     
     mask_array = None
