@@ -2,10 +2,11 @@
 venv/
 __pycache__/
 
-# Bỏ qua toàn bộ ảnh trong thư mục data vì quá nặng
+# Bỏ qua ảnh vệ tinh gốc (vì cái này mới nặng)
 data/images/*
-data/masks/*
 
-# Nhưng giữ lại cấu trúc thư mục (file .gitkeep)
+# CHO PHÉP ảnh mask (vì nó nhẹ)
+!data/masks/*.png  <-- Thêm dòng này (hoặc xóa dòng data/masks/* đi)
+
+# Giữ lại cấu trúc thư mục
 !data/images/.gitkeep
-!data/masks/.gitkeep
