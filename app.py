@@ -91,7 +91,7 @@ def fetch_metadata():
     items.sort(key=lambda x: x.datetime)
     return items
 
-@st.cache_data(show_spinner=False)
+# Đã bỏ @st.cache_data để tránh lỗi UnhashableParamError với đối tượng Item
 def download_satellite_image(item):
     ds = odc.stac.load([item], bands=["B04", "B03", "B02"], bbox=BBOX, resolution=10, chunks={})
     r = ds["B04"].values[0].astype(float)
@@ -134,7 +134,7 @@ with col_vis:
         sat_img = download_satellite_image(current_item)
     
     # --- LOGIC XỬ LÝ MASK PNG ---
-    # SỬA LỖI TẠI ĐÂY: Thêm 'img_' vào tên file để khớp với file upload
+    # Đã sửa tên file cho khớp với định dạng "img_YYYY-MM-DD.png"
     png_filename = f"img_{actual_date.strftime('%Y-%m-%d')}.png" 
     png_path = os.path.join(MASK_DIR, png_filename)
     
